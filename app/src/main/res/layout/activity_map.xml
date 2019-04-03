@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapActivity">
+
+    <!--Toolbar-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:id="@+id/MapTitle"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#ffffff"
+            tools:layout_editor_absoluteX="206dp"
+            tools:layout_editor_absoluteY="9dp" />
+    </android.support.v7.widget.Toolbar>
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0">
+
+    </com.baidu.mapapi.map.MapView>
+
+    <!--
+       app:backgroundTint - 设置FAB的背景颜色。
+       app:backgroundTint - 设置FAB的背景颜色。
+       app:rippleColor - 设置FAB点击时的背景颜色。
+       app:borderWidth - 该属性尤为重要，如果不设置0dp，那么在4.1的sdk上FAB会显示为正方形，而且在5.0以后的sdk没有阴影效果。所以设置为borderWidth="0dp"。
+       app:elevation - 默认状态下FAB的阴影大小。
+       app:pressedTranslationZ - 点击时候FAB的阴影大小。
+       app:fabSize - 设置FAB的大小，该属性有两个值，分别为normal和mini，对应的FAB大小分别为56dp和40dp。
+       android:src - 设置FAB的图标，Google建议符合Design设计的该图标大小为24dp。
+       app:layout_anchor - 设置FAB的锚点，即以哪个控件为参照点设置位置。
+       app:layout_anchorGravity - 设置FAB相对锚点的位置，值有 bottom、center、right、left、top等。
+       app:useCompatPadding 是否使用兼容的填充大小
+
+     -->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_marker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="25dp"
+        android:src="@mipmap/add_01"
+        app:borderWidth="0.0dip"
+        android:scaleType="center"
+        app:fabSize="mini"
+        app:useCompatPadding="true"
+        app:backgroundTint="@color/add_blue_1"
+        app:layout_constraintEnd_toEndOf="@+id/mapView"
+        app:layout_constraintTop_toTopOf="@+id/mapView" />
+    <!--  添加android:scaleType="center"会把中间的小图放到最大-->
+
+</android.support.constraint.ConstraintLayout>
