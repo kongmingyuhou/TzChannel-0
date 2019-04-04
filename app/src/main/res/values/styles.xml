@@ -23,8 +23,8 @@
 
     <!--base theme light-->
     <style name="Base.App.Theme.Light" parent="@style/Theme.AppCompat.Light">
-
     </style>
+
     <!-- 日间模式 -->
     <style name="App.Theme.Light" parent="Base.App.Theme.Light" />
 

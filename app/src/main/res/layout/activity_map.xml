@@ -57,6 +57,7 @@
        app:useCompatPadding 是否使用兼容的填充大小
 
      -->
+    <!--
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/add_marker"
         android:layout_width="wrap_content"
@@ -64,7 +65,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="25dp"
-        android:src="@mipmap/add_01"
+        android:src="@mipmap/delete_1"
         app:borderWidth="0.0dip"
         android:scaleType="center"
         app:fabSize="mini"
@@ -72,6 +73,8 @@
         app:backgroundTint="@color/add_blue_1"
         app:layout_constraintEnd_toEndOf="@+id/mapView"
         app:layout_constraintTop_toTopOf="@+id/mapView" />
+        -->
     <!--  添加android:scaleType="center"会把中间的小图放到最大-->
+
 
 </android.support.constraint.ConstraintLayout>
