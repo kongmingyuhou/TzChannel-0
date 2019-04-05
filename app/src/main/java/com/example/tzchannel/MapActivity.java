@@ -22,6 +22,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.baidu.location.BDAbstractLocationListener;
 import com.baidu.location.BDLocation;
 import com.baidu.location.LocationClient;
@@ -39,6 +40,8 @@ import com.baidu.mapapi.map.MarkerOptions;
 import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
+import com.example.tzchannel.suspensionfab.SuspensionFab;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -64,17 +67,25 @@ public class MapActivity extends AppCompatActivity implements View.OnClickListen
     private LatLng mDestinationPoint;//目的地坐标点
     private LatLng mCurrentPoint;//当前坐标点
     private Double lastX = 0.0;
+    private SuspensionFab mFab;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
 
         SDKInitializer.initialize(getApplicationContext());
         setContentView(R.layout.activity_map);
         mMapView = (MapView) findViewById(R.id.mapView);
+        //mFab=(SuspensionFab)findViewById(R.id.default_fab_id);
         mBaiduMap = mMapView.getMap();
         mBaiduMap.setMyLocationEnabled(true);
-        setTitle(Channle_Map_Title);
+
+        setTitle(Channle_Map_Title);  //设置页面名称
+
+
+
+
 
         //API版本高于23
         if(Build.VERSION.SDK_INT> Build.VERSION_CODES.LOLLIPOP)
